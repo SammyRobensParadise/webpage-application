@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Landing from './Landing';
-import Filmography from './Filmography';
-import Profile from './Profile';
-import Contact from './Contact';
-import Footer from './Footer';
 
-class App extends Component {
+class Profile extends Component {
   render() {
     return (
       <div className="App">
-      <Landing />
-      <Filmography />
-      <Profile />
-      <Contact />
-      <Footer />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -35,4 +25,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Profile;
