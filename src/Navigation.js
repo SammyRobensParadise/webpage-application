@@ -33,7 +33,7 @@ render() {
     return (
       <div>
         <Navbar className='navigate' light expand="xs">
-          <NavbarBrand href="/">Emily Bandel</NavbarBrand>
+          <NavbarBrand href="/">EB</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>

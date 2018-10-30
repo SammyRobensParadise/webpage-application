@@ -12,13 +12,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Navigation />
       <Landing />
       <Filmography />
-      <Profile />
-      <Contact />
-      <Footer />
-      </div>
+   </div>
     );
   }
 }
