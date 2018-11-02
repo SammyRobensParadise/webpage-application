@@ -1,13 +1,20 @@
-
+.inkstain{
+background-image: url("./inkstain.svg");
+background-repeat: no-repeat;
+background-size: cover;
+width: 100%;
+position: relative;
+}
 
 .ebname{
     padding-top: 10%;
     padding-bottom: 0;
-    text-align: right;
+    text-align: center;
+    position: relative;
 }
 .ebtitle{
     padding-top: 0%;
-    text-align: right;
+    text-align: center;
     position: relative;
  }  
 .explore_Contributions_btn {
@@ -16,15 +23,13 @@
     border-style: solid;
     border-radius: 48px;
     background-color: rgb(0, 0, 0);
-    position: inherit;
+    position: relative;
     width: 80%;
     height: 68px;
     z-index: 75;
     color: #ffffff;
     text-decoration: #ffffff;
     text-decoration: underline;
-    line-height: 1.2;
-    font-size: inherit;
     text-align: center;
     margin: 0 auto;
     
@@ -40,6 +45,5 @@
     box-shadow: 0px 6px 67.15px 11.85px rgba(0, 0, 0, 0.6);
     height: 20px;
     border-radius: 10px;
-    z-index: 68;
   }
   

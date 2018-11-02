@@ -32,16 +32,15 @@ toggle() {
 render() {
     return (
       <div>
-        <Navbar className='navigate' light expand="xs">
-          <NavbarBrand href="/">EB</NavbarBrand>
+        <Navbar className='navigate' expand="xs">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="#">Profile</NavLink>
+                <NavLink><span  className="Navigationcss">Profile</span></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Contact</NavLink>
+                <NavLink ><span className="Navigationcss" >Contact</span></NavLink>
               </NavItem>
             </Nav>
           </Collapse>
