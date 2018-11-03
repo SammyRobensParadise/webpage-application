@@ -40,9 +40,14 @@ class Landing extends Component {
 
   };
   render() {
+    //generating local variables for use in landing....
     var name = "Emily Bandel";
+    var title = "Actress";
+    var exploreBtntxt = "Explore"
+    var city = "Vancouver";
+    var province = "BC";
     let headerPhoto = <img className="EmilyBandelImg" src={this.getCurrentImg()} alt={name+this.getCurrentImg()}/>
-    //let nextButton = <div className="taverseCarouselbtn" onClick={this.setCurrentImg()} alt="Next Image"></div>
+    let nextButton = <div className="taverseCarouselbtn" onClick={this.setCurrentImg()} alt="Next Image"></div>
 
     return (
      <div className="inkstain">
@@ -50,9 +55,9 @@ class Landing extends Component {
       <Row className="herotitle">
       <Col xs="4" className="heroleft">
       <Container>
-      <h1 className="ebname"><span>Emily Bandel</span></h1>
-      <h2 className="ebtitle"><span>Actress</span></h2>
-      <button className="explore_Contributions_btn"><h3><span>Explore</span></h3></button>
+      <h1 className="ebname"><span>{name}</span></h1>
+      <h2 className="ebtitle"><span>{title}</span></h2>
+      <button className="explore_Contributions_btn"><h3><span>{exploreBtntxt}</span></h3></button>
       </Container>
       </Col>
       <Col xs="4">
@@ -60,11 +65,12 @@ class Landing extends Component {
       <Col xs="4"className="heroright">
       <Container>
       {headerPhoto}
+      {nextButton}
       </Container>
       </Col>
       </Row> 
      <Container><Row className="vancouver">
-      <Col xs="12"><h2><span>Vancouver, BC</span></h2></Col>
+      <Col xs="12"><h2><span>{city}, {province}</span></h2></Col>
       </Row>
       </Container>
       
