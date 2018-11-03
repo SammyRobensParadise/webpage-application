@@ -7,6 +7,15 @@ import './inkstain.svg';
 import { Container, Row, Col } from 'reactstrap';
 
 class Landing extends Component {
+  constructor(props){
+    super(props);
+    this.state = { Images:[
+      
+    ],
+    current: 0,
+    isNext: true
+    };
+  };
   render() {
     return (
      <div className="inkstain">
@@ -23,6 +32,7 @@ class Landing extends Component {
       </Col>
       <Col xs="4"className="heroright">
       <Container>
+
       </Container>
       </Col>
       </Row> 
