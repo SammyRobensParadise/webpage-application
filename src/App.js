@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import inkstain from './inkstain.svg';
+import inkstain from './assets/inkstain.svg';
 import './App.css';
 import Navigation from './Navigation';
 import Landing from './Landing';

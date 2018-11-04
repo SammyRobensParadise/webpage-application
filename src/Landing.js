@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navigation from './Navigation';
 import './Landing.css';
 import './App.css';
-import './inkstain.svg';
+import './assets/inkstain.svg';
 import BullyMasked from './img/BullyMasked.png';
 import NerdyMasked from './img/NerdyMasked.png';
 import FancyMasked from './img/FancyMasked.png';
@@ -18,36 +18,37 @@ class Landing extends Component {
       FancyMasked,
       StunningMasked
     ],
-    current: 0
+    current: 0,
+    isNext: true
     };
+    this.handleNext =this.handleNext.bind(this);
   };
-  getImgNumSize(props){
-      var imgNum = this.state.Images.length;
-      return imgNum;
-    };
-  getCurrentImg(props){
-    return this.setCurrentImg();
-  };
-  setCurrentImg(props){
-    //checking to see if the current value is that of first element in the array
-    var defaultCurrent = this.state.current;
-    var num = this.getImgNumSize()-this.getImgNumSize();
-    if (defaultCurrent === num ){
-      return this.state.Images[num].toString();
-    }
-  };
-  handleNext(props){
+   handleNext(){
+     let index = this.state.current,
+     length  = this.state.Images.length-1;
+     if(index === length){
+       index = -1;
+     }
+      index = index+1;
 
-  };
+      this.setState({
+        current: index,
+        isNext: true
+      });
+     }
   render() {
+
+    let index = this.state.current;
+    let isNext= this.state.isNext;
+    let src = this.state.Images[index];
     //generating local variables for use in landing....
     var name = "Emily Bandel";
     var title = "Actress";
     var exploreBtntxt = "Explore"
     var city = "Vancouver";
     var province = "BC";
-    let headerPhoto = <img className="EmilyBandelImg" src={this.getCurrentImg()} alt={name+this.getCurrentImg()}/>
-    let nextButton = <div className="taverseCarouselbtn" onClick={this.setCurrentImg()} alt="Next Image"></div>
+    let headerPhoto = <img className="EmilyBandelImg" src={src} alt={src.toString()+isNext}/>
+    let nextButton = <button className="taverseCarouselbtn" onClick={this.handleNext} alt="Next Image">click here</button>
 
     return (
      <div className="inkstain">
