@@ -3,6 +3,8 @@ import Navigation from './Navigation';
 import './Landing.css';
 import './App.css';
 import './assets/inkstain.svg';
+import './assets/nextArrowBefore.svg'
+import './assets/nextArrowAfter.svg'
 import BullyMasked from './img/BullyMasked.png';
 import NerdyMasked from './img/NerdyMasked.png';
 import FancyMasked from './img/FancyMasked.png';
@@ -48,8 +50,8 @@ class Landing extends Component {
     var city = "Vancouver";
     var province = "BC";
     let headerPhoto = <img className="EmilyBandelImg" src={src} alt={src.toString()+isNext}/>
-    let nextButton = <button className="taverseCarouselbtn" onClick={this.handleNext} alt="Next Image">click here</button>
-
+    let nextButton = <div className="taverseCarouselbtn" onClick={this.handleNext} alt="Next Image"></div>
+    let exploreButton = <button className="explore_Contributions_btn"><h3><span>{exploreBtntxt}</span></h3></button>
     return (
      <div className="inkstain">
       <Navigation />
@@ -58,7 +60,7 @@ class Landing extends Component {
       <Container>
       <h1 className="ebname"><span>{name}</span></h1>
       <h2 className="ebtitle"><span>{title}</span></h2>
-      <button className="explore_Contributions_btn"><h3><span>{exploreBtntxt}</span></h3></button>
+      {exploreButton}
       </Container>
       </Col>
       <Col xs="4">
