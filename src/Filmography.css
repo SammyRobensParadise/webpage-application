@@ -1,0 +1,23 @@
+.inkstainmiddle{
+    background-image: url("./assets/inkstainfilm.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.sectionheader{
+    padding-top: 1%;
+    padding-bottom: 0;
+    text-align: center;
+    position: relative;
+    font-size: 4rem;
+    color: #ffffff;
+}
+.sectionsubheader{
+    padding-top: 0;
+    text-align: center;
+    left: 8rem;
+    position: inherit;
+    font-size: 2rem;
+    color: #ffffff;
+    padding-bottom: 5%;
+}
