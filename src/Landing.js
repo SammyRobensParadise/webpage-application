@@ -8,6 +8,7 @@ WAS PUBLISHED WITH AUTHOR CONSENT
 */
 import React, { Component } from 'react';
 import Navigation from './Navigation';
+import App from './App';
 import './Landing.css';
 import './App.css';
 import './assets/inkstain.svg';
@@ -55,48 +56,41 @@ class Landing extends Component {
     let isNext= this.state.isNext;
     let src = this.state.Images[index];
     //generating global variables for use in landing....
-    var name = "Emily Bandel";
-    var title = "Actress";
     var exploreBtntxt = "Explore"
-    var city = "Vancouver";
-    var province = "BC";
+    //generating local css object...
+    var localCSSclasses = {
+      background: 'inkstain',
+      landingPagetitle: 'herotitle',
+      EmilyBandelPhoto: 'EmilyBandelImg',
+      carouselButton: 'taverseCarouselbtn',
+      exploreButton: 'explore_Contributions_btn',
+      EmilyBandelName: 'ebname',
+      EmilyBandelTitle: 'ebtitle',
+      LocationClass: 'vancouver',
+      SpacerBarStyle: 'seperationbar',
+      leftColumn: 'columnleft',
+      rightColumn: 'columnright'
+  };
     //generating local variables for use in landing...
-    let headerPhoto = <img className="EmilyBandelImg" src={src} alt={src.toString()+isNext}/>
-    let nextButton = <div className="taverseCarouselbtn" onClick={this.handleNext} alt="Next Image"></div>
-    let exploreButton = <button className="explore_Contributions_btn"><h3><span>{exploreBtntxt}</span></h3></button>
+    let {EmilyInfo} = this.props;
+    let headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} src={src} alt={src.toString()+isNext}/>
+    let nextButton = <button className={localCSSclasses.carouselButton} onClick={this.handleNext} alt="Next Image"></button>
+    let exploreButton = <button className={localCSSclasses.exploreButton}><h3><span>{exploreBtntxt}</span></h3></button>
+    let navigationBar = <Navigation/>
+    let ebname = <h1 className={localCSSclasses.EmilyBandelName}><span>{EmilyInfo.firstName+" "+EmilyInfo.lastName}</span></h1>
+    let ebtitle = <h2 className={localCSSclasses.EmilyBandelTitle}><span>{EmilyInfo.title}</span></h2>
+    let location = <h2 className={localCSSclasses.LocationClass}><span>{EmilyInfo.city}, {EmilyInfo.province}</span></h2>
+    let seperationBar = <div className={localCSSclasses.SpacerBarStyle}></div>
+
     //return function as follows appears physcially to user
     return (
-     <div className="inkstain">
-      <Navigation />
-      <Row className="herotitle">
-      <Col xs="4" className="heroleft">
-      <Container>
-      <h1 className="ebname"><span>{name}</span></h1>
-      <h2 className="ebtitle"><span>{title}</span></h2>
-      {exploreButton}
-      </Container>
-      </Col>
-      <Col xs="4">
-      </Col>
-      <Col xs="4"className="heroright">
-      <Container>
-      {headerPhoto}
-      {nextButton}
-      </Container>
-      </Col>
-      </Row> 
-     <Container><Row className="vancouver">
-      <Col xs="12"><h2><span>{city}, {province}</span></h2></Col>
-      </Row>
-      </Container>
-      
-      <Container>
-      <Row>
-        <Col>
-        <div className="seperationbar"></div>
-        </Col>
-      </Row>
-      </Container>
+     <div className={localCSSclasses.background}>
+      {navigationBar}
+        <Row>
+          <Col className='column1' xs="8">{ebname}{ebtitle}<Container>{exploreButton}</Container><Container>{location}</Container></Col>
+          <Col className='column2' xs="4"><div className='ImageContain'>{nextButton}{headerPhoto}</div></Col>
+        </Row>
+      {seperationBar}
      </div>
     );
   }
