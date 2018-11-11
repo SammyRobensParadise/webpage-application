@@ -21,3 +21,13 @@
     color: #ffffff;
     padding-bottom: 5%;
 }
+.standing_room_only_image {
+    background-image: url("standing room only image.png");
+    position: absolute;
+    left: 1482px;
+    top: 1181px;
+    width: 463px;
+    height: 607px;
+    z-index: 84;
+  }
+  
