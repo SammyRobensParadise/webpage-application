@@ -11,25 +11,31 @@ class Profile extends Component {
       videoLink: "https://player.vimeo.com/video/300380587",
       sectionTitle: 'Profile',
       sectionDefinition: 'The backstory to Emily Bandel',
+      videoDescription: "Emily's reel"
     }
   }
   render() {
-    //generating local css classes
+    //generating local css classes...
     var localCSSclasses = {
       inkstainBackground: 'inkstainbottom',
       sectionHeader: 'sectionheader',
       sectionSubHeader: 'sectionsubheader',
       vimeoVideoFormat: 'vimeovideoformat',
-      vimeoVideoInternal: 'vimeovideo_outer'
+      vimeoVideoInternal: 'vimeovideo_outer',
+      EmilyBandelBioPic: 'emilybandelbiopic'
     }
-    //generating local html elements
+    //generating props from parent class...
+    let {EmilyInfo} = this.props;
+    //generating local html elements...
     let sectionName = <h1 className={localCSSclasses.sectionHeader}><span>{this.state.sectionTitle}</span></h1>
     let sectionMinheader = <h2 className={localCSSclasses.sectionSubHeader}><span>{this.state.sectionDefinition}</span></h2>
+    let EmilyReel = <h2 className={localCSSclasses.sectionSubHeader}><span>{this.state.videoDescription}</span></h2>
     return (
       <div className={localCSSclasses.inkstainBackground}>
       <Container>
         {sectionName}
         {sectionMinheader}
+        {EmilyReel}
       </Container>
       <Container>
       <Row>
@@ -40,6 +46,9 @@ class Profile extends Component {
           </Container>
           </Col>
           <Col xs="0" sm="1"></Col>
+        </Row>
+        <Row>
+          <Col xs="12" sm="12"><div className={localCSSclasses.EmilyBandelBioPic}>{EmilyInfo.bioPic}</div></Col>
         </Row>
       </Container>
       </div>

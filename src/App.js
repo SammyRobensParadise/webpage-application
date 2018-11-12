@@ -25,7 +25,7 @@ class App extends Component {
       <div className="App">
       <Landing EmilyInfo={this.state} />
       <Filmography />
-      <Profile />
+      <Profile EmilyInfo={this.state} />
    </div>
     );
   }

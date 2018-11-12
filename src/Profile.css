@@ -5,7 +5,7 @@
     background-position: center;
 }
 .sectionheader{
-    padding-top: 5%;
+    padding-top: 3%;
     padding-bottom: 0;
     text-align: center;
     position: relative;
@@ -19,7 +19,7 @@
     position: inherit;
     font-size: 2rem;
     color: #ffffff;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
 }
 .vimeovideoformat{
     position:absolute;
@@ -31,4 +31,9 @@
 .vimeovideo_outer{
 padding: 56.25% 0 0 0;
 position: relative;
+}
+.emilybandelbiopic{
+    padding-top: 3%;
+    color:#ffffff;
+    font-size: 1rem;
 }
