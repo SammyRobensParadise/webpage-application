@@ -1,0 +1,34 @@
+.inkstainbottom{
+    background-image: url("./assets/inkstainprofile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.sectionheader{
+    padding-top: 5%;
+    padding-bottom: 0;
+    text-align: center;
+    position: relative;
+    font-size: 4rem;
+    color: #ffffff;
+}
+.sectionsubheader{
+    padding-top: 0;
+    text-align: center;
+    left: 8rem;
+    position: inherit;
+    font-size: 2rem;
+    color: #ffffff;
+    padding-bottom: 5%;
+}
+.vimeovideoformat{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.vimeovideo_outer{
+padding: 56.25% 0 0 0;
+position: relative;
+}

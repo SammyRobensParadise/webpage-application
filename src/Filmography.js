@@ -48,7 +48,6 @@ class Filmography extends Component {
         textStyle: 'text'
       }
     }
-    let {EmilyInfo} = this.props;
     let sectionName = <h1 className={localCSSclasses.sectionHeader}><span>{this.state.sectionTitle}</span></h1>
     let sectionMinheader = <h2 className={localCSSclasses.sectionSubHeader}><span>{this.state.sectionDefinition}</span></h2>
     //generating feature components...
@@ -59,8 +58,9 @@ class Filmography extends Component {
     let Wickbanner= <img className={localCSSclasses.WickCSS} src={this.state.images.WickCover} alt= "Wick"></img>
     return (
       <div className={localCSSclasses.inkstainBackground}>
-      {sectionName}
+      <Container>{sectionName}
       {sectionMinheader}
+      </Container>
       <Container>
       <Row>
           <Col xs="12" sm="4"><Container>
