@@ -26,6 +26,7 @@ class App extends Component {
       <Landing EmilyInfo={this.state} />
       <Filmography />
       <Profile EmilyInfo={this.state} />
+      <Contact />
    </div>
     );
   }
