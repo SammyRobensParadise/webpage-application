@@ -27,6 +27,7 @@ class App extends Component {
       <Filmography />
       <Profile EmilyInfo={this.state} />
       <Contact />
+      <Footer />
    </div>
     );
   }

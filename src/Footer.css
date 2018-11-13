@@ -1,0 +1,25 @@
+.footerbackground{
+    background-color: #000000;
+    height: 8rem;
+}
+@media only screen and (max-width: 900px){
+.footerbackground{
+    height: 8rem;
+}
+}
+.sociallink{
+    height: 6rem;
+    width: auto;
+    text-align: center;
+    padding-top: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+@media only screen and (max-width: 900px){
+.sociallink{
+    height: 4rem;
+    padding-top: 2rem;
+}
+}

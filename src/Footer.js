@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-import logo from './assets/logo.svg';
+import { Container, Row, Col } from 'reactstrap';
 import './App.css';
+import './Footer.css';
+import instaLogo from './assets/instagram.svg';
+import moviereel from './assets/moviereel.svg';
 
 class Footer extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      privacyPolicy: "#",
+      instagramLink: 'https://www.instagram.com/emilybandel/?hl=en',
+      IMDBLink: 'https://www.imdb.com/name/nm6818003/',
+      instagramLogo: instaLogo,
+      IMDBLogo: moviereel
+    }
+  }
   render() {
+    var localCSSclasses = {
+      background: 'footerbackground',
+      socialLinks: 'sociallink'
+
+    }
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className={localCSSclasses.background}>
+      <Container>
+        <Row>
+          <Col xs="6" sm="6"><a  href={this.state.instagramLink} target='blank_'><img className={localCSSclasses.socialLinks} src={this.state.instagramLogo} alt="instagram"></img></a></Col>
+          <Col xs="6" sm="6"><a  href={this.state.IMDBLink} target='blank_'><img className={localCSSclasses.socialLinks} src={this.state.IMDBLogo} alt='IMDB'></img></a></Col>
+        </Row>
+      </Container>
       </div>
+      
     );
   }
 }
