@@ -86,10 +86,15 @@ class Landing extends Component {
     return (
      <div className={localCSSclasses.background}>
       {navigationBar}
+      <Container>
         <Row>
-          <Col className='column1' xs="8">{ebname}{ebtitle}<Container>{exploreButton}</Container><Container>{location}</Container></Col>
-          <Col className='column2' xs="4"><div className='ImageContain'>{nextButton}{headerPhoto}</div></Col>
+          <Col className='column1' xs="12" sm="8">{ebname}{ebtitle}<Container>{exploreButton}</Container></Col>
+          <Col className='column2' xs="12" sm="4"><div className='ImageContain'>{nextButton}{headerPhoto}</div></Col>
         </Row>
+        <Row>
+          <Col xs="12" sm="12"><Container>{location}</Container></Col>
+        </Row>
+        </Container>
       {seperationBar}
      </div>
     );
