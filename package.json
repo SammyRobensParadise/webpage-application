@@ -4,8 +4,10 @@
   "private": true,
   "homepage": "https://EmilyBandel.github.io/webpage-application",
   "dependencies": {
+    "animejs": "^2.2.0",
     "bootstrap": "^4.1.3",
     "gh-pages": "^2.0.1",
+    "npm": "^6.4.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.5",

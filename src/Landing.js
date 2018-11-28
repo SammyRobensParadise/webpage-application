@@ -7,6 +7,7 @@ OR ANY OTHER OPEN SOURCE PLATFORM ON WHICH ASSET
 WAS PUBLISHED WITH AUTHOR CONSENT
 */
 import React, { Component } from 'react';
+import anime from 'animejs'
 import Navigation from './Navigation';
 import App from './App';
 import './Landing.css';
@@ -33,6 +34,7 @@ class Landing extends Component {
     current: 0,
     isNext: true
     };
+
     this.handleNext =this.handleNext.bind(this);
   };
   //handles carousel onClick...
@@ -48,7 +50,15 @@ class Landing extends Component {
         current: index,
         isNext: true
       });
+      console.log("index"+index);
+      console.log("current state"+this.state.current);
      }
+  //click function
+  onClick(){
+    this.props.onClick(this.props.renderFlags.renderLanding);
+ }
+
+
   //render function
   render() {
     //create local variable that inherits the current state of class variables...
@@ -70,17 +80,22 @@ class Landing extends Component {
       SpacerBarStyle: 'seperationbar',
       leftColumn: 'columnleft',
       rightColumn: 'columnright'
+
   };
     //generating local variables for use in landing...
     let {EmilyInfo} = this.props;
     let headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} src={src} alt={src.toString()+isNext}/>
     let nextButton = <button className={localCSSclasses.carouselButton} onClick={this.handleNext} alt="Next Image"></button>
-    let exploreButton = <button className={localCSSclasses.exploreButton}><h3><span>{exploreBtntxt}</span></h3></button>
+    let exploreButton = <button onClick={this.onClick.bind(this)} className={localCSSclasses.exploreButton}><h3><span>{exploreBtntxt}</span></h3></button>
     let navigationBar = <Navigation/>
     let ebname = <h1 className={localCSSclasses.EmilyBandelName}><span>{EmilyInfo.firstName+" "+EmilyInfo.lastName}</span></h1>
     let ebtitle = <h2 className={localCSSclasses.EmilyBandelTitle}><span>{EmilyInfo.title}</span></h2>
     let location = <h2 className={localCSSclasses.LocationClass}><span>{EmilyInfo.city}, {EmilyInfo.province}</span></h2>
     let seperationBar = <div className={localCSSclasses.SpacerBarStyle}></div>
+  
+   //set change interval for the carousel
+   
+
 
     //return function as follows appears physcially to user
     return (
