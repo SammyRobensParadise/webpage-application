@@ -39,10 +39,21 @@ class App extends Component {
       }
     }  
     };
+    displayFilmography = (renderflag) => {
+      console.log(renderflag)
+      var status = renderflag;
+      if(this.state.renderFlags.renderFilmography === false){
+        this.setState({
+        renderFilmography: status
+      });
+    }
+      console.log(this.state.renderFilmography)
+    };
+
   render() {
     return (
       <div className="App">
-      <Landing onClick={this.onClick} EmilyInfo={this.state} renderStatus={this.state.renderFlags.renderLanding} />
+      <Landing onClick={this.onClick} EmilyInfo={this.state} renderStatus={this.displayFilmography} />
       <Filmography renderStatus={this.state.renderFlags.renderFilmography} />
       <Profile EmilyInfo={this.state} renderStatus={this.state.renderFlags.renderProfile} />
       <Contact renderStatus={this.state.renderFlags.renderContact} />

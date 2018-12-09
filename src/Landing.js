@@ -1,10 +1,11 @@
 /*___________________________________________
-CODE ASSET OF SAMUEL ROBENS-PARADISE © 2018
+SOURCE CODE ASSET OF SAMUEL ROBENS-PARADISE © 2018
 DISTRIBUTION OF CODE WITHOUT WRITTEN CONSENT OF
 SAMUEL ROBENS-PARADISE IS PROHIBITED UNLESS
 ACCESSED THROUGH PUBLIC DOIMAIN SUCH AS GITHUB
 OR ANY OTHER OPEN SOURCE PLATFORM ON WHICH ASSET
 WAS PUBLISHED WITH AUTHOR CONSENT
+________________________________________________
 */
 import React, { Component } from 'react';
 import anime from 'animejs'
@@ -32,10 +33,12 @@ class Landing extends Component {
       StunningMasked
     ],
     current: 0,
-    isNext: true
+    isNext: true,
+    displayFilm: true
     };
 
     this.handleNext =this.handleNext.bind(this);
+    this.sendFlag = this.sendFlag.bind(this);
   };
   //handles carousel onClick...
    handleNext(){
@@ -54,11 +57,17 @@ class Landing extends Component {
       console.log("current state"+this.state.current);
      }
   //click function
-  onClick(){
-    this.props.onClick(this.props.renderFlags.renderLanding);
- }
-
-
+  sendFlag = (callback) => {
+    if(!this.state.displayFilm){
+    this.setState({
+      displayFilm: true
+    });
+  }
+  this.props.renderStatus(this.state.displayFilm); 
+  }; 
+ /* sendCallback = () => {
+    this.props.renderStatus(this.state.displayFilm);  
+  }*/
   //render function
   render() {
     //create local variable that inherits the current state of class variables...
@@ -86,7 +95,7 @@ class Landing extends Component {
     let {EmilyInfo} = this.props;
     let headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} src={src} alt={src.toString()+isNext}/>
     let nextButton = <button className={localCSSclasses.carouselButton} onClick={this.handleNext} alt="Next Image"></button>
-    let exploreButton = <button onClick={this.onClick.bind(this)} className={localCSSclasses.exploreButton}><h3><span>{exploreBtntxt}</span></h3></button>
+    let exploreButton = <button onClick={this.sendFlag} className={localCSSclasses.exploreButton}><h3><span>{exploreBtntxt}</span></h3></button>
     let navigationBar = <Navigation/>
     let ebname = <h1 className={localCSSclasses.EmilyBandelName}><span>{EmilyInfo.firstName+" "+EmilyInfo.lastName}</span></h1>
     let ebtitle = <h2 className={localCSSclasses.EmilyBandelTitle}><span>{EmilyInfo.title}</span></h2>

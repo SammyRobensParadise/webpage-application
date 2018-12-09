@@ -1,17 +1,18 @@
 /*___________________________________________
-CODE ASSET OF SAMUEL ROBENS-PARADISE © 2018
+SOURCE CODE ASSET OF SAMUEL ROBENS-PARADISE © 2018
 DISTRIBUTION OF CODE WITHOUT WRITTEN CONSENT OF
 SAMUEL ROBENS-PARADISE IS PROHIBITED UNLESS
 ACCESSED THROUGH PUBLIC DOIMAIN SUCH AS GITHUB
 OR ANY OTHER OPEN SOURCE PLATFORM ON WHICH ASSET
 WAS PUBLISHED WITH AUTHOR CONSENT
+_____________________________________________
 */
+
 .inkstain {
     background-image: url("./assets/inkstain.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  
 }
 
 .ebname {
@@ -22,6 +23,12 @@ WAS PUBLISHED WITH AUTHOR CONSENT
     font-size: 4rem;
 }
 
+@media screen and (max-width: 900px) {
+    .ebname {
+        font-size: 3rem;
+    }
+}
+
 .ebtitle {
     padding-top: 0;
     text-align: center;
@@ -29,7 +36,24 @@ WAS PUBLISHED WITH AUTHOR CONSENT
     position: inherit;
     font-size: 2rem;
 }
-.vancouver{
+
+@media screen and (max-width: 900px) {
+    .ebtitle {
+        font-size: 1.5rem;
+        position: relative;
+        left: 6rem;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .ebtitle {
+        font-size: 1.5rem;
+        position: relative;
+        left: 4rem;
+    }
+}
+
+.vancouver {
     padding-top: 0;
     text-align: center;
     color: #ffffff;
@@ -37,6 +61,19 @@ WAS PUBLISHED WITH AUTHOR CONSENT
     font-size: 2rem;
     bottom: 0;
 }
+
+@media screen and (max-width: 780px) {
+    .vancouver {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .vancouver {
+        font-size: 1.25rem;
+    }
+}
+
 .explore_Contributions_btn {
     border-width: 0.125rem;
     border-color: rgb(255, 255, 255);
@@ -53,7 +90,15 @@ WAS PUBLISHED WITH AUTHOR CONSENT
     text-decoration: underline;
     text-align: center;
     margin: 0 auto;
+}
 
+@media only screen and (max-width: 900px) {
+    .explore_Contributions_btn {
+        top: 10rem;
+        border-width: 0.100rem;
+        height: 3.5rem;
+        font-size: 0.5rem;
+    }
 }
 
 .explore_Contributions_btn:hover {
@@ -72,11 +117,38 @@ WAS PUBLISHED WITH AUTHOR CONSENT
 .EmilyBandelImg {
     position: inherit;
     z-index: 1;
-    width: 500px;
+    width: 30rem;
     height: auto;
     margin-bottom: 0;
     padding: 0;
 
+}
+
+@media only screen and (max-width: 1260px) {
+    .EmilyBandelImg {
+        top: 5rem;
+        padding-right: 2rem;
+        width: 25rem;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .EmilyBandelImg {
+        padding-right: 2rem;
+        width: 15rem;
+        height: auto;
+        padding-top: 6rem;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .EmilyBandelImg {
+        margin-right: 2rem;
+        width: 15rem;
+        height: auto;
+        align-self: center;
+    }
 }
 
 .taverseCarouselbtn {
@@ -108,6 +180,30 @@ WAS PUBLISHED WITH AUTHOR CONSENT
 
 }
 
+@media screen and (max-width: 900px) {
+    .taverseCarouselbtn {
+        height: 65px;
+        width: 65px;
+    }
+    .taverseCarouselbtn:hover{
+        height: 65px;
+        width: 65px;
+        filter: drop-shadow(5px 5px 5px #ffffff);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .taverseCarouselbtn {
+        height: 50px;
+        width: 50px;
+    }
+    .taverseCarouselbtn:hover{
+        height: 50px;
+        width: 50px;
+        filter: drop-shadow(3px 3px 3px #ffffff);
+    }
+}
+
 #container {
     position: relative;
 }
@@ -117,5 +213,5 @@ WAS PUBLISHED WITH AUTHOR CONSENT
 }
 .column2{
     background-color:blue;
-   }
-  */ 
+   } 
+   */
