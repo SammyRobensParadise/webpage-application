@@ -13,6 +13,11 @@
     font-size: 4rem;
     color: #ffffff;
 }
+@media screen and (max-width: 900px) {
+    .sectionheader {
+        font-size: 3rem !important;
+    }
+}
 
 .sectionsubheader {
     padding-top: 0;
@@ -22,8 +27,15 @@
     font-size: 2rem;
     color: #ffffff;
     padding-bottom: 5%;
-}
 
+}
+@media screen and (max-width: 900px) {
+    .sectionsubheader {
+        font-size: 1.25rem !important;
+        left: 6rem;
+        font-style: normal;
+    }
+}
 .standing_room_only_image {
  width: 90%;
  height: auto;

@@ -7,7 +7,7 @@
     transition: all 0.1s ease-in;
     text-decoration:none;
 }
-@media only screen and (max-width: 625px){
+@media only screen and (max-width: 720px){
     .Navigationcss{
         background-color: #000000;
         border-width: 20rem;
@@ -18,3 +18,9 @@
 .Navigationcss:hover{
     text-shadow: #ffffff 2px 1px 1px;
 }
+@media only screen and (max-width: 720px){
+    .Navigationcss:hover{
+        background-color: darkgrey;
+
+    }
+    }

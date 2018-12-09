@@ -12,6 +12,15 @@
     font-size: 4rem;
     color: #ffffff;
 }
+@media only screen and (max-width: 1370px) {
+    .sectionheader{
+        font-size: 3rem;
+        background-color: darkgray;
+        border-radius: 20rem;
+        padding: 0.30rem 0.30rem 0.30rem;
+
+    }
+}
 .sectionsubheader{
     padding-top: 0;
     text-align: center;
