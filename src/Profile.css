@@ -1,15 +1,17 @@
-.inkstainbottom{
+.inkstainbottom {
     background-image: url("./assets/inkstainprofile.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-@media screen and (max-width: 1780px) and (min-width: 1500px){
-    .inkstainbottom{
+
+@media screen and (max-width: 1780px) and (min-width: 1500px) {
+    .inkstainbottom {
         background-color: #000000;
     }
 }
-.sectionheader{
+
+.sectionheader {
     padding-top: 3%;
     padding-bottom: 0;
     text-align: center;
@@ -17,8 +19,9 @@
     font-size: 4rem;
     color: #ffffff;
 }
+
 @media only screen and (max-width: 1370px) {
-    .sectionheader{
+    .sectionheader {
         font-size: 3rem;
         background-color: darkgray;
         border-radius: 20rem;
@@ -26,7 +29,8 @@
 
     }
 }
-.sectionsubheader{
+
+.sectionsubheader {
     padding-top: 0;
     text-align: center;
     left: 8rem;
@@ -35,28 +39,32 @@
     color: #ffffff;
     padding-bottom: 3%;
 }
-.vimeovideoformat{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+
+.vimeovideoformat {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-.vimeovideo_outer{
-padding: 56.25% 0 0 0;
-position: relative;
+
+.vimeovideo_outer {
+    padding: 56.25% 0 0 0;
+    position: relative;
 }
-.emilybandelbiopic{
+
+.emilybandelbiopic {
     padding-top: 3%;
-    color:#ffffff;
+    color: #ffffff;
     font-size: 1rem;
     background-color: #000000;
     margin: 1rem 1rem 1rem;
     border-radius: 2rem;
     padding: 1rem 1rem 0.5rem;
 }
-@media screen and (max-width: 1200px) and (min-width: 770px){
-    .emilybandelbiopic{
+
+@media screen and (max-width: 1200px) and (min-width: 770px) {
+    .emilybandelbiopic {
         font-size: 0.75;
     }
 }

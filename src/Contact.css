@@ -6,6 +6,17 @@
     font-size: 4rem;
     color: #000000;
 }
+@media only screen and (max-width: 1370px) {
+    .sectionheaderContact {
+        margin-top: 1%;
+        font-size: 3rem;
+        background-color: #000000;
+        border-radius: 20rem;
+        padding: 0.30rem 0.30rem 0.30rem;
+        color: #ffffff;
+
+    }
+}
 .sectionsubheaderContact{
     padding-top: 0;
     text-align: center;
@@ -14,6 +25,13 @@
     font-size: 2rem;
     color: #000000;
     padding-bottom: 3%;
+}
+@media screen and (max-width: 900px) {
+    .sectionsubheaderContact {
+        font-size: 1.25rem !important;
+        left: 6rem;
+        font-style: normal;
+    }
 }
 .contactcardouter{
 background-color: #ffffff;
