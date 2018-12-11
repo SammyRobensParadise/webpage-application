@@ -4,6 +4,11 @@
     background-size: cover;
     background-position: center;
 }
+@media screen and (max-width: 1780px) and (min-width: 1500px){
+    .inkstainbottom{
+        background-color: #000000;
+    }
+}
 .sectionheader{
     padding-top: 3%;
     padding-bottom: 0;
@@ -45,4 +50,13 @@ position: relative;
     padding-top: 3%;
     color:#ffffff;
     font-size: 1rem;
+    background-color: #000000;
+    margin: 1rem 1rem 1rem;
+    border-radius: 2rem;
+    padding: 1rem 1rem 0.5rem;
+}
+@media screen and (max-width: 1200px) and (min-width: 770px){
+    .emilybandelbiopic{
+        font-size: 0.75;
+    }
 }

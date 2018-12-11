@@ -63,15 +63,17 @@ class Filmography extends Component {
       </Container>
       <Container>
       <Row>
-          <Col xs="12" sm="4"><Container>
+          <Col xs="12" md="4">
+          <Container>
           <div className={localCSSclasses.localCSSTransitionClasses.contain}>
           {SRObanner}
           <div className={localCSSclasses.localCSSTransitionClasses.overlay+" "+localCSSclasses.localCSSTransitionClasses.textStyle}>
           {this.state.movieDescriptions.StandingRoomOnlyDescription}
           </div>
           </div>
-          </Container></Col>
-          <Col xs="12" sm="4"><Container>
+          </Container>
+          </Col>
+          <Col xs="12" md="4"><Container>
             <div className={localCSSclasses.localCSSTransitionClasses.contain}>
             {TFbanner}
             <div className={localCSSclasses.localCSSTransitionClasses.overlay+" "+localCSSclasses.localCSSTransitionClasses.textStyle}>
@@ -79,7 +81,7 @@ class Filmography extends Component {
             </div>
             </div>
             </Container></Col>
-          <Col xs="12" sm="4"><Container>
+          <Col xs="12" md="4"><Container>
             <div className={localCSSclasses.localCSSTransitionClasses.contain}>
             {DRbanner}
             <div className={localCSSclasses.localCSSTransitionClasses.overlay+" "+localCSSclasses.localCSSTransitionClasses.textStyle}>
@@ -89,7 +91,7 @@ class Filmography extends Component {
             </Container></Col>
         </Row>
         <Row>
-          <Col xs="12" sm="4"><Container>
+          <Col xs="12" md="4"><Container>
             <div className={localCSSclasses.localCSSTransitionClasses.contain}>
             {Pbanner}
             <div className={localCSSclasses.localCSSTransitionClasses.overlay+" "+localCSSclasses.localCSSTransitionClasses.textStyle}>
@@ -97,7 +99,7 @@ class Filmography extends Component {
             </div>
             </div>
             </Container></Col>
-          <Col xs="12" sm="8"><Container>
+          <Col xs="12" md="8"><Container>
             <div className={localCSSclasses.localCSSTransitionClasses.contain}>
             {Wickbanner}
             <div className={localCSSclasses.localCSSTransitionClasses.overlay+" "+localCSSclasses.localCSSTransitionClasses.textStyle}>
