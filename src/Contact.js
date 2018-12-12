@@ -44,7 +44,7 @@ class Contact extends Component {
     let AgentInfo = <h2 className={localCSSclasses.ContactCardContent}>{this.state.AgentInfo.firstName+" "+this.state.AgentInfo.LastName+", "+this.state.AgentInfo.Agency}</h2>
     let ContactTelephone = <h2 className={localCSSclasses.ContactPhone}>{this.state.AgentInfo.phone}</h2>
     let ContactPhoneLogo = <img className={localCSSclasses.ContactPhoneLogo} src={this.state.callLogo} alt="Phone Emily's Agent"></img>
-    let ContactEmail = <h2 className={localCSSclasses.ContactEmail}>{this.state.AgentInfo.email}</h2>
+    let ContactEmail = <a href={"mailto:"+ this.state.AgentInfo.email+"?Subject=Emily%20Bandel"} target="_top"><h2 className={localCSSclasses.ContactEmail}>{this.state.AgentInfo.email}</h2></a>
     let ContactEmailLogo = <img className={localCSSclasses.ContactEmailLogo} src={this.state.emailLogo} alt="Email Emily's Agent"></img>
     return (
       <div>

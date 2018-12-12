@@ -118,7 +118,7 @@ _____________________________________________
     position: inherit;
     z-index: 1;
     width: 30rem;
-    height: auto;
+    height: 100%;
     margin-bottom: 0;
     padding: 0;
 
@@ -129,7 +129,7 @@ _____________________________________________
         top: 5rem;
         padding-right: 2rem;
         width: 25rem;
-        height: auto;
+        height: 100%;
     }
 }
 
