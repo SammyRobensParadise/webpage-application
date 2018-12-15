@@ -10,7 +10,6 @@ ________________________________________________
 import React, { Component } from 'react';
 import anime from 'animejs'
 import Navigation from './Navigation';
-import App from './App';
 import './Landing.css';
 import './App.css';
 import './assets/inkstain.svg';
@@ -27,18 +26,37 @@ class Landing extends Component {
   constructor(props){
     super(props);
     this.state = { Images:[
-      BullyMasked,
-      NerdyMasked,
-      FancyMasked,
-      StunningMasked
+      'Loading Image...',
+      'loading Image...',
+      'loading Image...',
+      'loading Image...'
     ],
     current: 0,
     isNext: true,
-    displayFilm: true
+    displayFilm: true,
+    showImage: false
+
     };
 
     this.handleNext =this.handleNext.bind(this);
     this.sendFlag = this.sendFlag.bind(this);
+  };
+  //ensure that the components correctly render calling component did mount
+  componentDidMount(){
+    setTimeout( () => {
+      console.log('componentdidmount called');
+      this.setState({
+        Images: [
+          BullyMasked,
+          NerdyMasked,
+          FancyMasked,
+          StunningMasked
+          ],
+          showImage: true
+      });
+      console.log(this.state.showImage);
+      console.log(this.state.Images[0]);
+    }, 4000);
   };
   //handles carousel onClick...
    handleNext(){
@@ -88,12 +106,13 @@ class Landing extends Component {
       LocationClass: 'vancouver',
       SpacerBarStyle: 'seperationbar',
       leftColumn: 'columnleft',
-      rightColumn: 'columnright'
-
+      rightColumn: 'columnright',
+      localSpinner: 'placespinner'
   };
+  
     //generating local variables for use in landing...
     let {EmilyInfo} = this.props;
-    let headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} src={src} alt={src.toString()+isNext}/>
+    let spinnerset = <div className={localCSSclasses.localSpinner}><div className="lds-ellipsis" id='centerspinner'><div></div><div></div><div></div><div></div></div></div>
     let nextButton = <button className={localCSSclasses.carouselButton} onClick={this.handleNext} alt="Next Image"></button>
     let exploreButton = <button onClick={this.sendFlag} className={localCSSclasses.exploreButton}><h3><span>{exploreBtntxt}</span></h3></button>
     let navigationBar = <Navigation/>
@@ -101,14 +120,32 @@ class Landing extends Component {
     let ebtitle = <h2 className={localCSSclasses.EmilyBandelTitle}><span>{EmilyInfo.title}</span></h2>
     let location = <h2 className={localCSSclasses.LocationClass}><span>{EmilyInfo.city}, {EmilyInfo.province}</span></h2>
     let seperationBar = <div className={localCSSclasses.SpacerBarStyle}></div>
+    let headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} src={src} alt={src.toString()+isNext}/>
   
    //set change interval for the carousel
-   
+   //
 
-
+   if(this.state.showImage === false){
     //return function as follows appears physcially to user
     return (
      <div className={localCSSclasses.background}>
+      {navigationBar}
+      <Container>
+        <Row>
+          <Col className='column1' xs="12" sm="8">{ebname}{ebtitle}<Container>{exploreButton}</Container></Col>
+          <Col className='column2' xs="12" sm="4"><div className='ImageContain'>{nextButton}{spinnerset}</div></Col>
+        </Row>
+        <Row>
+          <Col xs="12" sm="12"><Container>{location}</Container></Col>
+        </Row>
+        </Container>
+      {seperationBar}
+     </div>
+    );
+  }
+  else {
+    return(
+      <div className={localCSSclasses.background}>
       {navigationBar}
       <Container>
         <Row>
@@ -121,7 +158,8 @@ class Landing extends Component {
         </Container>
       {seperationBar}
      </div>
-    );
+    )
+  }
   }
 }
 

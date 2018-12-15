@@ -7,7 +7,110 @@ OR ANY OTHER OPEN SOURCE PLATFORM ON WHICH ASSET
 WAS PUBLISHED WITH AUTHOR CONSENT
 _____________________________________________
 */
+#centerspinner {
+    text-align: center;
+    right: 50%;
+    left: 50%;
+}
+.placespinner {
+    position: inherit;
+    z-index: 1;
+    width: 30rem;
+    height: 100%;
+    margin-bottom: 0;
+    padding: 20rem;
+    align-content: center;
 
+}
+
+@media only screen and (max-width: 1260px) {
+    .placespinner {
+        top: 5rem;
+        padding-right: 2rem;
+        width: 25rem;
+        height: 100%;
+        padding: 15rem;
+        align-content: center;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .placespinner {
+        padding-right: 2rem;
+        width: 15rem;
+        height: auto;
+        padding-top: 6rem;
+        padding: 10rem;
+        align-content: center;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .placespinner {
+        margin-right: 2rem;
+        width: 15rem;
+        height: auto;
+        align-self: center;
+        padding: 10rem;
+        align-content: center;
+    }
+}
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 27px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 6px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 6px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 26px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 45px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(19px, 0);
+    }
+  }
+  
 .inkstain {
     background-image: url("./assets/inkstain.svg");
     background-repeat: no-repeat;
