@@ -43,6 +43,7 @@ class Landing extends Component {
   };
   //ensure that the components correctly render calling component did mount
   componentDidMount(){
+    console.log("called in componentdidmount " +this.state.showImage);
     setTimeout( () => {
       console.log('componentdidmount called');
       this.setState({
@@ -54,9 +55,10 @@ class Landing extends Component {
           ],
           showImage: true
       });
-      console.log(this.state.showImage);
+      console.log("Called at the end of component did mount " +this.state.showImage);
       console.log(this.state.Images[0]);
-    }, 4000);
+    }, 3000);
+    console.log("Called at the end of component did mount not in time sync" +this.state.showImage);
   };
   //handles carousel onClick...
    handleNext(){
@@ -120,12 +122,12 @@ class Landing extends Component {
     let ebtitle = <h2 className={localCSSclasses.EmilyBandelTitle}><span>{EmilyInfo.title}</span></h2>
     let location = <h2 className={localCSSclasses.LocationClass}><span>{EmilyInfo.city}, {EmilyInfo.province}</span></h2>
     let seperationBar = <div className={localCSSclasses.SpacerBarStyle}></div>
-    let headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} src={src} alt={src.toString()+isNext}/>
+    let headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} src={src} alt={src.toString()+isNext+"It looks like some things didn't make the journey from cyber space! Try reloading the webpage"}/>
   
    //set change interval for the carousel
    //
 
-   if(this.state.showImage === false){
+   if(this.state.showImage !== true || this.state.showImage === undefined || this.state.showImage === false){
     //return function as follows appears physcially to user
     return (
      <div className={localCSSclasses.background}>
@@ -140,6 +142,7 @@ class Landing extends Component {
         </Row>
         </Container>
       {seperationBar}
+      {console.log("called in render1 "+this.state.showImage)}
      </div>
     );
   }

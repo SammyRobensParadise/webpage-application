@@ -12,6 +12,7 @@ _____________________________________________
     right: 50%;
     left: 50%;
 }
+
 .placespinner {
     position: inherit;
     z-index: 1;
@@ -55,13 +56,15 @@ _____________________________________________
         align-content: center;
     }
 }
+
 .lds-ellipsis {
     display: inline-block;
     position: relative;
     width: 64px;
     height: 64px;
-  }
-  .lds-ellipsis div {
+}
+
+.lds-ellipsis div {
     position: absolute;
     top: 27px;
     width: 11px;
@@ -69,48 +72,58 @@ _____________________________________________
     border-radius: 50%;
     background: #fff;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
-  }
-  .lds-ellipsis div:nth-child(1) {
+}
+
+.lds-ellipsis div:nth-child(1) {
     left: 6px;
     animation: lds-ellipsis1 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(2) {
+}
+
+.lds-ellipsis div:nth-child(2) {
     left: 6px;
     animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(3) {
+}
+
+.lds-ellipsis div:nth-child(3) {
     left: 26px;
     animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(4) {
+}
+
+.lds-ellipsis div:nth-child(4) {
     left: 45px;
     animation: lds-ellipsis3 0.6s infinite;
-  }
-  @keyframes lds-ellipsis1 {
+}
+
+@keyframes lds-ellipsis1 {
     0% {
-      transform: scale(0);
+        transform: scale(0);
     }
+
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
-  @keyframes lds-ellipsis3 {
+}
+
+@keyframes lds-ellipsis3 {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
+
     100% {
-      transform: scale(0);
+        transform: scale(0);
     }
-  }
-  @keyframes lds-ellipsis2 {
+}
+
+@keyframes lds-ellipsis2 {
     0% {
-      transform: translate(0, 0);
+        transform: translate(0, 0);
     }
+
     100% {
-      transform: translate(19px, 0);
+        transform: translate(19px, 0);
     }
-  }
-  
+}
+
 .inkstain {
     background-image: url("./assets/inkstain.svg");
     background-repeat: no-repeat;
@@ -213,8 +226,13 @@ _____________________________________________
     border-color: rgb(235, 235, 235);
     border-style: solid;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 6px 67.15px 11.85px rgba(0, 0, 0, 0.6);
+    /*box-shadow: 0px 6px 67.15px 0 rgba(0, 0, 0, 0.6);*/
     height: 1.25rem;
+}
+@media only screen and (max-width: 620px) {
+    .seperationbar {
+        height: 1rem;
+    }
 }
 
 .EmilyBandelImg {
@@ -225,6 +243,17 @@ _____________________________________________
     margin-bottom: 0;
     padding: 0;
 
+}
+
+@media only screen and (min-width: 1261px) {
+    .EmilyBandelImg {
+        position: relative;
+        z-index: 1;
+        width: 30rem;
+        height: 100%;
+        margin-bottom: 0;
+        padding: 0;
+    }
 }
 
 @media only screen and (max-width: 1260px) {
@@ -288,7 +317,8 @@ _____________________________________________
         height: 65px;
         width: 65px;
     }
-    .taverseCarouselbtn:hover{
+
+    .taverseCarouselbtn:hover {
         height: 65px;
         width: 65px;
         filter: drop-shadow(5px 5px 5px #ffffff);
@@ -300,7 +330,8 @@ _____________________________________________
         height: 50px;
         width: 50px;
     }
-    .taverseCarouselbtn:hover{
+
+    .taverseCarouselbtn:hover {
         height: 50px;
         width: 50px;
         filter: drop-shadow(3px 3px 3px #ffffff);

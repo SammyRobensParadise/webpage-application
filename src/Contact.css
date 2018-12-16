@@ -43,13 +43,23 @@
     box-shadow: 0px 6px 67.15px 11.85px rgba(0, 0, 0, 0.6);
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width:1200px) {
     .contactcardouter {
-        height: 20rem;
+        height: 23rem;
     }
 }
 
-.contactcardinner {}
+@media only screen and (max-width: 900px) {
+    .contactcardouter {
+        height: 13rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .contactcardouter {
+        height: 11rem;
+    }
+}
 
 .content {
     padding-top: 5%;
@@ -77,9 +87,9 @@
     padding-top: 5%;
     text-align-last: center;
     text-decoration: underline;
-    text-decoration-color: blue !important;
+    text-decoration-color:	#0000FF !important;
     color: #000000 !important;
-    filter: drop-shadow( 0rem 0.5rem 0.5rem blue);
+    filter: drop-shadow(0rem 0.5rem 0.5rem 	#0000FF);
 }
 
 @media only screen and (max-width: 900px) {
@@ -122,13 +132,14 @@
     text-decoration-color: #000000 !important;
     color: #000000 !important;
 }
+
 .contactbyemail:hover {
     padding-top: 5%;
     text-align-last: center;
     text-decoration: underline;
-    text-decoration-color: blue !important;
+    text-decoration-color: 	#0000FF !important;
     color: #000000 !important;
-    filter: drop-shadow( 0rem 0.5rem 0.5rem blue);
+    filter: drop-shadow(0rem 0.5rem 0.5rem #0000FF);
 }
 
 @media only screen and (max-width: 900px) {
