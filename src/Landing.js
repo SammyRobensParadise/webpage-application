@@ -55,11 +55,9 @@ class Landing extends Component {
           ],
           showImage: true
       });
-      console.log("Called at the end of component did mount " +this.state.showImage);
-      console.log(this.state.Images[0]);
-    }, 3000);
-    console.log("Called at the end of component did mount not in time sync" +this.state.showImage);
+   }, 3500);
   };
+
   //handles carousel onClick...
    handleNext(){
      let index = this.state.current,
@@ -73,8 +71,6 @@ class Landing extends Component {
         current: index,
         isNext: true
       });
-      console.log("index"+index);
-      console.log("current state"+this.state.current);
      }
   //click function
   sendFlag = (callback) => {
@@ -122,7 +118,7 @@ class Landing extends Component {
     let ebtitle = <h2 className={localCSSclasses.EmilyBandelTitle}><span>{EmilyInfo.title}</span></h2>
     let location = <h2 className={localCSSclasses.LocationClass}><span>{EmilyInfo.city}, {EmilyInfo.province}</span></h2>
     let seperationBar = <div className={localCSSclasses.SpacerBarStyle}></div>
-    let headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} src={src} alt={src.toString()+isNext+"It looks like some things didn't make the journey from cyber space! Try reloading the webpage"}/>
+    var headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} src={src} alt={src.toString()+isNext+"It looks like some things didn't make the journey from cyber space! Try reloading the webpage"}/>
   
    //set change interval for the carousel
    //
@@ -142,11 +138,26 @@ class Landing extends Component {
         </Row>
         </Container>
       {seperationBar}
-      {console.log("called in render1 "+this.state.showImage)}
      </div>
     );
   }
-  else {
+  else if(this.state.showImage === true){
+    return(
+      <div className={localCSSclasses.background}>
+      {navigationBar}
+      <Container>
+        <Row>
+          <Col className='column1' xs="12" sm="8">{ebname}{ebtitle}<Container>{exploreButton}</Container></Col>
+          <Col className='column2' xs="12" sm="4"><div className='ImageContain'>{nextButton}{headerPhoto}</div></Col>
+        </Row>
+        <Row>
+          <Col xs="12" sm="12"><Container>{location}</Container></Col>
+        </Row>
+        </Container>
+      {seperationBar}
+     </div>
+    )
+  } else{
     return(
       <div className={localCSSclasses.background}>
       {navigationBar}

@@ -42,7 +42,7 @@ class Profile extends Component {
         <Col xs="0" sm="1"></Col>
           <Col xs="12" sm="10">
           <Container>
-          <div className={localCSSclasses.vimeoVideoInternal}><iframe title="Emily Bandel Reel" src="https://player.vimeo.com/video/300380587" className={localCSSclasses.vimeoVideoFormat} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+          <div className={localCSSclasses.vimeoVideoInternal}><iframe title="Emily Bandel Reel" src="https://player.vimeo.com/video/300380587" className={localCSSclasses.vimeoVideoFormat} frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen={true}></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
           </Container>
           </Col>
           <Col xs="0" sm="1"></Col>
