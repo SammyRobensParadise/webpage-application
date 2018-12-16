@@ -20,6 +20,7 @@ import NerdyMasked from './img/NerdyMasked.png';
 import FancyMasked from './img/FancyMasked.png';
 import StunningMasked from './img/StunningMasked.png';
 import { Container, Row, Col } from 'reactstrap';
+import ReactSwipe from 'react-swipe';
 
 class Landing extends Component {
   //landing constructor...
@@ -35,7 +36,6 @@ class Landing extends Component {
     isNext: true,
     displayFilm: true,
     showImage: false
-
     };
 
     this.handleNext =this.handleNext.bind(this);
@@ -43,9 +43,7 @@ class Landing extends Component {
   };
   //ensure that the components correctly render calling component did mount
   componentDidMount(){
-    console.log("called in componentdidmount " +this.state.showImage);
     setTimeout( () => {
-      console.log('componentdidmount called');
       this.setState({
         Images: [
           BullyMasked,
@@ -58,7 +56,7 @@ class Landing extends Component {
    }, 3500);
   };
 
-  //handles carousel onClick...
+  //handles carousel arrow onClick...
    handleNext(){
      let index = this.state.current,
      length  = this.state.Images.length-1;
@@ -72,6 +70,11 @@ class Landing extends Component {
         isNext: true
       });
      }
+
+     //handles carousel onswipe function, to the right...
+
+
+
   //click function
   sendFlag = (callback) => {
     if(!this.state.displayFilm){
@@ -118,7 +121,7 @@ class Landing extends Component {
     let ebtitle = <h2 className={localCSSclasses.EmilyBandelTitle}><span>{EmilyInfo.title}</span></h2>
     let location = <h2 className={localCSSclasses.LocationClass}><span>{EmilyInfo.city}, {EmilyInfo.province}</span></h2>
     let seperationBar = <div className={localCSSclasses.SpacerBarStyle}></div>
-    var headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} src={src} alt={src.toString()+isNext+"It looks like some things didn't make the journey from cyber space! Try reloading the webpage"}/>
+    var headerPhoto = <img className={localCSSclasses.EmilyBandelPhoto} onClick={this.handleNext} src={src} alt={src.toString()+isNext+"It looks like some things didn't make the journey from cyber space! Try reloading the webpage"}/>
   
    //set change interval for the carousel
    //
