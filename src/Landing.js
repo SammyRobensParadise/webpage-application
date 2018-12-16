@@ -89,7 +89,7 @@ class Landing extends Component {
     //create local variable that inherits the current state of class variables...
     let index = this.state.current;
     let isNext= this.state.isNext;
-    let src = this.state.Images[index];
+    var src = this.state.Images[index];
     //generating global variables for use in landing....
     var exploreBtntxt = "Explore"
     //generating local css object...
@@ -149,6 +149,7 @@ class Landing extends Component {
         <Row>
           <Col className='column1' xs="12" sm="8">{ebname}{ebtitle}<Container>{exploreButton}</Container></Col>
           <Col className='column2' xs="12" sm="4"><div className='ImageContain'>{nextButton}{headerPhoto}</div></Col>
+          {console.log(headerPhoto.toString())}
         </Row>
         <Row>
           <Col xs="12" sm="12"><Container>{location}</Container></Col>
