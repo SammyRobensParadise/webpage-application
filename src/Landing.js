@@ -152,7 +152,6 @@ class Landing extends Component {
         <Row>
           <Col className='column1' xs="12" sm="8">{ebname}{ebtitle}<Container>{exploreButton}</Container></Col>
           <Col className='column2' xs="12" sm="4"><div className='ImageContain'>{nextButton}{headerPhoto}</div></Col>
-          {console.log(headerPhoto.toString())}
         </Row>
         <Row>
           <Col xs="12" sm="12"><Container>{location}</Container></Col>

@@ -2,6 +2,7 @@
     margin: 0 auto;
 }
 .Navigationcss{
+    cursor: pointer;
     color: #ffffff;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     transition: all 0.1s ease-in;

@@ -191,6 +191,7 @@ _____________________________________________
 }
 
 .explore_Contributions_btn {
+    cursor: pointer;
     border-width: 0.125rem;
     border-color: rgb(255, 255, 255);
     border-style: solid;
@@ -236,6 +237,7 @@ _____________________________________________
 }
 
 .EmilyBandelImg {
+    cursor: pointer;
     position: inherit;
     z-index: 1;
     width: 30rem;
@@ -246,6 +248,7 @@ _____________________________________________
 
 @media only screen and (min-width: 1261px) {
     .EmilyBandelImg {
+        cursor: pointer;
         position: relative;
         z-index: 1;
         width: 30rem;
@@ -257,6 +260,7 @@ _____________________________________________
 
 @media only screen and (max-width: 1260px) {
     .EmilyBandelImg {
+        cursor: pointer;
         top: 5rem;
         padding-right: 2rem;
         width: 25rem;
@@ -284,6 +288,7 @@ _____________________________________________
 
 .taverseCarouselbtn {
     background-image: url('./assets/nextArrowBefore.svg');
+    cursor: pointer;
     background-repeat: no-repeat;
     outline: none;
     background-color: transparent;
