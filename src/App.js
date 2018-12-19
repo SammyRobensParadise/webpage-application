@@ -28,7 +28,7 @@ class App extends Component {
       province: 'British Columbia',
       provinceAbrev: "BC",
       bioPic: 'Emily Bandel is an actress who grew up in Portland, Oregon performing in theatre. She moved to Vancouver BC for high school and began pursuing film and tv while continuing to study theatre in school. Emily has performed in many different feature and short films that have premiered in Canada and the US, as well as local music videos and video games. She enjoys playing characters that are spooky, dark and as far from herself as possible - the crazier the better.',
-      renderFlags: {
+  
         //Landing render is true on construction so that no logic is required to render the webpage, component will render by themselves
         renderLanding: true,
         //by defailt the following compnents do not render
@@ -36,31 +36,52 @@ class App extends Component {
         renderProfile: false,
         renderContact: false,
         renderFooter: false
-      }
-    }  
+    } 
+    this.LandingRef = React.createRef()
+    this.filmographyRef = React.createRef();
+    this.profileRef = React.createRef();
+    this.contactRef = React.createRef();
+    this.footerRef = React.createRef();
+    
     };
     displayFilmography = (renderflag) => {
-      console.log(renderflag)
-      var status = renderflag;
-      if(this.state.renderFlags.renderFilmography === false){
+      setTimeout( () => {
+      if(this.state.renderFilmography === false || this.state.renderFilmography !== true){
         this.setState({
-        renderFilmography: status
+        renderFilmography: renderflag
       });
     }
-      console.log(this.state.renderFilmography)
-    };
+    console.log("inside of sync "+this.state.renderFilmography)
+  }, 1000);
+  };
+  componentDidUpdate(){
+    setTimeout( () => {
+    console.log("componentdidupdate called: " + this.state.renderFilmography);
+    if(this.state.renderFilmography === true || this.state.renderFilmography !== false || this.state.renderFilmography !== undefined){
+      console.log("hitting if");
+      this.scrollToRef();
+    }
+  },2000);
+  }
 
   render() {
     return (
       <div className="App">
-      <Landing onClick={this.onClick} EmilyInfo={this.state} renderStatus={this.displayFilmography} />
-      <Filmography renderStatus={this.state.renderFlags.renderFilmography} />
-      <Profile EmilyInfo={this.state} renderStatus={this.state.renderFlags.renderProfile} />
-      <Contact renderStatus={this.state.renderFlags.renderContact} />
-      <Footer renderStatus={this.state.renderFlags.renderFooter}/>
+      <Landing ref={this.LandingRef} onClick={this.onClick} EmilyInfo={this.state} renderStatus={this.displayFilmography} />
+      <Filmography ref={this.filmographyRef} renderStatus={this.state.renderFilmography} />
+      <Profile ref={this.profileRef} EmilyInfo={this.state} renderStatus={this.state.renderProfile} />
+      <Contact ref={this.contactRef} renderStatus={this.state.renderContact} />
+      <Footer ref={this.footerRef} renderStatus={this.state.renderFooter}/>
    </div>
     );
   }
+  scrollToRef = () => { // run this method to execute scrolling. 
+    console.log("scroll is being called");
+    console.log(this.filmographyRef);
+   // window.scrollTo({
+     //   top: this.filmographyRef.offsetTop
+    //})
+}
 }
 
 export default App;
