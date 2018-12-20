@@ -20,7 +20,6 @@ import NerdyMasked from './img/NerdyMasked.png';
 import FancyMasked from './img/FancyMasked.png';
 import StunningMasked from './img/StunningMasked.png';
 import { Container, Row, Col } from 'reactstrap';
-import ReactSwipe from 'react-swipe';
 
 class Landing extends Component {
   //landing constructor...
