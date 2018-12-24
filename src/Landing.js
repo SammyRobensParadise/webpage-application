@@ -93,7 +93,8 @@ class Landing extends Component {
           navigationFlagIntermediateProfile: renderFlag
         })
       }
-      console.log("is this receivned in profile? " +this.state.navigationFlagIntermediateProfile); 
+      console.log("is this receivned in profile? " +this.state.navigationFlagIntermediateProfile);
+      this.props.getrenderProfile(this.state.navigationFlagIntermediateProfile);
     }, 500);
    }
    receiveFlagFromNavContact = (renderFlag) => {
@@ -103,7 +104,8 @@ class Landing extends Component {
           navigationFlagIntermediateContact: renderFlag
         })
       }
-      console.log("is this receivned in contact? " +this.state.navigationFlagIntermediateContact); 
+      console.log("is this receivned in contact? " +this.state.navigationFlagIntermediateContact);
+      this.props.getrenderContact(this.state.navigationFlagIntermediateContact);
     }, 500);
 
    }
