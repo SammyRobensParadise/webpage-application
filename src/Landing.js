@@ -8,7 +8,7 @@ WAS PUBLISHED WITH AUTHOR CONSENT
 ________________________________________________
 */
 import React, { Component } from 'react';
-import anime from 'animejs'
+//import anime from 'animejs'
 import Navigation from './Navigation';
 import './Landing.css';
 import './App.css';

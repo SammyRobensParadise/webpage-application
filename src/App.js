@@ -8,14 +8,16 @@ WAS PUBLISHED WITH AUTHOR CONSENT
 */
 
 import React, { Component } from 'react';
-import anime from 'animejs'
+import ReactDOM from 'react-dom';
 import './App.css';
-import Navigation from './Navigation';
+//import Navigation from './Navigation';
 import Landing from './Landing';
 import Filmography from './Filmography';
 import Profile from './Profile';
 import Contact from './Contact';
 import Footer from './Footer';
+import scrollToComponent from 'react-scroll-to-component';
+
 
 class App extends Component {
   constructor(props){
@@ -43,6 +45,7 @@ class App extends Component {
     this.contactRef = React.createRef();
     this.footerRef = React.createRef();
     
+    this.scrollToTopWithCallback = this.scrollToTopWithCallback.bind(this);
     };
     displayFilmography = (renderflag) => {
       setTimeout( () => {
@@ -54,21 +57,46 @@ class App extends Component {
     console.log("inside of sync "+this.state.renderFilmography)
   }, 1000);
   };
+  componentDidMount(){
+    scrollToComponent(this.refs.Violet, {offset: 0, align: 'middle', duration: 500});
+
+  };
+  componentWillUnmount(){
+
+    console.log("unmount");
+  };
+
+  scrollToTopWithCallback() {
+    let scroller = scrollToComponent(this.Violet, { offset: 0, align: 'top', duration: 1500});
+    scroller.on('end', () => console.log('Scrolling end!') );
+  }
+
   componentDidUpdate(){
     setTimeout( () => {
     console.log("componentdidupdate called: " + this.state.renderFilmography);
+    //var scrollNode = ReactDOM.findDOMNode(this.refs.filmographyRef);
+    var scrollNode = null;
     if(this.state.renderFilmography === true || this.state.renderFilmography !== false || this.state.renderFilmography !== undefined){
-      console.log("hitting if");
-      this.scrollToRef();
+      scrollNode = ReactDOM.findDOMNode(this.refs.film);
+      if(scrollNode === null){
+        scrollNode.scrollIntoView(false);
+      }
+      else{
+      scrollNode.scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
+      }
     }
-  },2000);
+  },1000);
   }
 
+ 
+
   render() {
+   
+    
     return (
       <div className="App">
-      <Landing ref={this.LandingRef} onClick={this.onClick} EmilyInfo={this.state} renderStatus={this.displayFilmography} />
-      <Filmography ref={this.filmographyRef} renderStatus={this.state.renderFilmography} />
+      <Landing onClick={this.onClick} EmilyInfo={this.state} renderStatus={this.displayFilmography} />
+      <Filmography ref="film" renderStatus={this.state.renderFilmography} />
       <Profile ref={this.profileRef} EmilyInfo={this.state} renderStatus={this.state.renderProfile} />
       <Contact ref={this.contactRef} renderStatus={this.state.renderContact} />
       <Footer ref={this.footerRef} renderStatus={this.state.renderFooter}/>
@@ -76,11 +104,6 @@ class App extends Component {
     );
   }
   scrollToRef = () => { // run this method to execute scrolling. 
-    console.log("scroll is being called");
-    console.log(this.filmographyRef);
-   // window.scrollTo({
-     //   top: this.filmographyRef.offsetTop
-    //})
 }
 }
 
