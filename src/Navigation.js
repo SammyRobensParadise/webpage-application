@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import logo from './assets/logo.svg';
 import './App.css';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  NavLink
+} from 'reactstrap';
 
 class Navigation extends Component {
   constructor(props) {
@@ -20,7 +15,9 @@ class Navigation extends Component {
 
   this.toggle = this.toggle.bind(this);
   this.state = {
-    isOpen: false
+    isOpen: false,
+    profileFlag: true,
+    ContactFlag: true
   };
 }
 toggle() {
@@ -28,6 +25,23 @@ toggle() {
     isOpen: !this.state.isOpen
   });
 }
+
+sendNavFlagProfile = () => {
+  if(!this.state.profileFlag){
+    this.setState({
+      profileFlag: true
+    });
+  }
+  this.props.navigationFlagIntermediateProfile(this.state.profileFlag);
+}; 
+sendNavFlagContact = () => {
+  if(!this.state.ContactFlag){
+    this.setState({
+      ContactFlag: true
+    });
+  }
+  this.props.navigationFlagIntermediateContact(this.state.ContactFlag);
+}; 
 
 render() {
     return (
@@ -37,10 +51,10 @@ render() {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink><span  className="Navigationcss">Profile</span></NavLink>
+                <NavLink><span onClick={this.sendNavFlagProfile} className="Navigationcss">Profile</span></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink ><span className="Navigationcss" >Contact</span></NavLink>
+                <NavLink ><span onClick={this.sendNavFlagContact} className="Navigationcss" >Contact</span></NavLink>
               </NavItem>
             </Nav>
           </Collapse>

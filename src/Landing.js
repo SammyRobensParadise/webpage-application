@@ -34,7 +34,9 @@ class Landing extends Component {
     current: 0,
     isNext: true,
     displayFilm: true,
-    showImage: false
+    showImage: false,
+    navigationFlagIntermediateProfile: false,
+    navigationFlagIntermediateContact: false
     };
 
     this.handleNext =this.handleNext.bind(this);
@@ -75,7 +77,7 @@ class Landing extends Component {
 
 
   //click function
-  sendFlag = (callback) => {
+  sendFlag = () => {
     if(!this.state.displayFilm){
     this.setState({
       displayFilm: true
@@ -83,9 +85,28 @@ class Landing extends Component {
   }
   this.props.renderStatus(this.state.displayFilm); 
   }; 
- /* sendCallback = () => {
-    this.props.renderStatus(this.state.displayFilm);  
-  }*/
+
+  receiveFlagFromNavProfile = (renderFlag) => {
+    setTimeout( () => {
+      if(this.state.navigationFlagIntermediateProfile === false || this.state.navigationFlagIntermediateProfile !== true){
+        this.setState({
+          navigationFlagIntermediateProfile: renderFlag
+        })
+      }
+      console.log("is this receivned in profile? " +this.state.navigationFlagIntermediateProfile); 
+    }, 500);
+   }
+   receiveFlagFromNavContact = (renderFlag) => {
+    setTimeout( () => {
+      if(this.state.navigationFlagIntermediateContact === false || this.state.navigationFlagIntermediateContact !== true){
+        this.setState({
+          navigationFlagIntermediateContact: renderFlag
+        })
+      }
+      console.log("is this receivned in contact? " +this.state.navigationFlagIntermediateContact); 
+    }, 500);
+
+   }
   //render function
   render() {
     //create local variable that inherits the current state of class variables...
@@ -115,7 +136,7 @@ class Landing extends Component {
     let spinnerset = <div className={localCSSclasses.localSpinner}><div className="lds-ellipsis" id='centerspinner'><div></div><div></div><div></div><div></div></div></div>
     let nextButton = <button className={localCSSclasses.carouselButton} onClick={this.handleNext} alt="Next Image"></button>
     let exploreButton = <button onClick={this.sendFlag} className={localCSSclasses.exploreButton}><h3><span>{exploreBtntxt}</span></h3></button>
-    let navigationBar = <Navigation/>
+    let navigationBar = <Navigation navigationFlagIntermediateProfile={this.receiveFlagFromNavProfile} navigationFlagIntermediateContact={this.receiveFlagFromNavContact}/>
     let ebname = <h1 className={localCSSclasses.EmilyBandelName}><span>{EmilyInfo.firstName+" "+EmilyInfo.lastName}</span></h1>
     let ebtitle = <h2 className={localCSSclasses.EmilyBandelTitle}><span>{EmilyInfo.title}</span></h2>
     let location = <h2 className={localCSSclasses.LocationClass}><span>{EmilyInfo.city}, {EmilyInfo.province}</span></h2>
