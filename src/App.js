@@ -38,7 +38,8 @@ class App extends Component {
         renderFilmography: false,
         renderProfile: false,
         renderContact: false,
-        renderFooter: false
+        renderFooter: false,
+        renderHook: 'null'
     } 
     this.LandingRef = React.createRef()
     this.filmographyRef = React.createRef();
@@ -55,7 +56,7 @@ class App extends Component {
         renderFilmography: renderflag
       });
     }
-    console.log("inside of sync "+this.state.renderFilmography)
+    console.log("status of displayfilmography "+this.state.renderFilmography)
   }, 1000);
   };
 
@@ -80,13 +81,23 @@ class App extends Component {
       console.log("status of render contact" + this.state.renderContact);
     }, 500)
   }
+
+  displayHook = (renderFlag) => {
+    setTimeout( () => {
+      this.setState({
+        renderHook: renderFlag
+      });
+      console.log("status of render hook as a string: " + this.state.renderHook);
+    }, 500)
+  }
+
   componentDidMount(){
     scrollToComponent(this.refs.Violet, {offset: 0, align: 'middle', duration: 500});
 
   };
   componentWillUnmount(){
 
-    console.log("unmount");
+    console.log("unmounting component...");
   };
 
   scrollToTopWithCallback() {
@@ -98,7 +109,8 @@ class App extends Component {
     setTimeout( () => {
     console.log("componentdidupdate called: film: " + this.state.renderFilmography + "   profile: "+ this.state.renderProfile+ "   contact: " + this.state.renderContact);
     var scrollNode = null;
-    if(this.state.renderFilmography === true || this.state.renderFilmography !== false){
+    if((this.state.renderFilmography === true || this.state.renderFilmography !== false) && this.state.renderHook === 'explore'){
+      console.log("hitting explore render");
       scrollNode = ReactDOM.findDOMNode(this.refs.film);
       if(scrollNode === null){
         scrollNode.scrollIntoView(false);
@@ -108,7 +120,7 @@ class App extends Component {
       console.log("rendering filmography...");
       }
     } 
-   else if(this.state.renderProfile === true || this.state.renderProfile !== false){
+   else if((this.state.renderProfile === true || this.state.renderProfile !== false) && this.state.renderHook === 'profile'){
       scrollNode = ReactDOM.findDOMNode(this.refs.profile);
       if(scrollNode === null){
         scrollNode.scrollIntoView(false);
@@ -116,7 +128,7 @@ class App extends Component {
         scrollNode.scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
       }
     } 
-    else if(this.state.renderContact === true || this.state.renderContact !== false){
+    else if((this.state.renderContact === true || this.state.renderContact !== false) && this.state.renderHook === 'contact'){
       scrollNode = ReactDOM.findDOMNode(this.refs.contact);
       if(scrollNode === null){
         scrollNode.scrollIntoView(false);
@@ -127,7 +139,7 @@ class App extends Component {
       scrollNode = ReactDOM.findDOMNode(this.refs.landing);
       scrollNode.scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
     }
-  },1000);
+  }, 500);
   }
 
   render() {
@@ -135,7 +147,7 @@ class App extends Component {
     
     return (
       <div className="App" >
-      <Landing ref="landing" EmilyInfo={this.state} renderStatus={this.displayFilmography} getrenderProfile={this.displayProfile} getrenderContact={this.displayContact} />
+      <Landing ref="landing" EmilyInfo={this.state} renderStatus={this.displayFilmography} getrenderProfile={this.displayProfile} getrenderContact={this.displayContact} getRenderHook={this.displayHook} />
       <Filmography ref="film" renderStatus={this.state.renderFilmography} />
       <Profile ref="profile" EmilyInfo={this.state} renderStatus={this.state.renderProfile} />
       <Contact ref="contact" renderStatus={this.state.renderContact} />
@@ -143,8 +155,6 @@ class App extends Component {
    </div>
     );
   }
-  scrollToRef = () => { // run this method to execute scrolling. 
+  
 }
-}
-
 export default App;

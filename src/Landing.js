@@ -36,7 +36,8 @@ class Landing extends Component {
     displayFilm: true,
     showImage: false,
     navigationFlagIntermediateProfile: false,
-    navigationFlagIntermediateContact: false
+    navigationFlagIntermediateContact: false,
+    navigationHookIntermediateString: "null"
     };
 
     this.handleNext =this.handleNext.bind(this);
@@ -52,7 +53,8 @@ class Landing extends Component {
           FancyMasked,
           StunningMasked
           ],
-          showImage: true
+          showImage: true,
+          exploreHook: "explore"
       });
    }, 3500);
   };
@@ -84,6 +86,7 @@ class Landing extends Component {
     });
   }
   this.props.renderStatus(this.state.displayFilm); 
+  this.props.getRenderHook(this.state.exploreHook);
   }; 
 
   receiveFlagFromNavProfile = (renderFlag) => {
@@ -104,10 +107,22 @@ class Landing extends Component {
           navigationFlagIntermediateContact: renderFlag
         })
       }
-      console.log("is this receivned in contact? " +this.state.navigationFlagIntermediateContact);
+      console.log("is this received in contact? " +this.state.navigationFlagIntermediateContact);
       this.props.getrenderContact(this.state.navigationFlagIntermediateContact);
     }, 500);
 
+   }
+   receiveHookfromNavigation = (renderFlag) => {
+    setTimeout( () => {
+      let boolCheck = this.state.navigationHookIntermediateString;
+      if( boolCheck === 'null' || boolCheck !== 'profile' || boolCheck !== 'contact' || boolCheck !== 'explore'){
+        this.setState({
+          navigationHookIntermediateString: renderFlag
+        })
+      }
+      console.log("what is recevied in hook from naviagtion? " +this.state.navigationHookIntermediateString);
+      this.props.getRenderHook(this.state.navigationHookIntermediateString);
+    }, 500);
    }
   //render function
   render() {
@@ -138,7 +153,7 @@ class Landing extends Component {
     let spinnerset = <div className={localCSSclasses.localSpinner}><div className="lds-ellipsis" id='centerspinner'><div></div><div></div><div></div><div></div></div></div>
     let nextButton = <button className={localCSSclasses.carouselButton} onClick={this.handleNext} alt="Next Image"></button>
     let exploreButton = <button onClick={this.sendFlag} className={localCSSclasses.exploreButton}><h3><span>{exploreBtntxt}</span></h3></button>
-    let navigationBar = <Navigation navigationFlagIntermediateProfile={this.receiveFlagFromNavProfile} navigationFlagIntermediateContact={this.receiveFlagFromNavContact}/>
+    let navigationBar = <Navigation navigationFlagIntermediateProfile={this.receiveFlagFromNavProfile} navigationFlagIntermediateContact={this.receiveFlagFromNavContact} navigationHookIntermediate={this.receiveHookfromNavigation}/>
     let ebname = <h1 className={localCSSclasses.EmilyBandelName}><span>{EmilyInfo.firstName+" "+EmilyInfo.lastName}</span></h1>
     let ebtitle = <h2 className={localCSSclasses.EmilyBandelTitle}><span>{EmilyInfo.title}</span></h2>
     let location = <h2 className={localCSSclasses.LocationClass}><span>{EmilyInfo.city}, {EmilyInfo.province}</span></h2>

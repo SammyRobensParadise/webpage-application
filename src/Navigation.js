@@ -17,7 +17,10 @@ class Navigation extends Component {
   this.state = {
     isOpen: false,
     profileFlag: true,
-    ContactFlag: true
+    ContactFlag: true,
+    profileHook: "profile",
+    contactHook: "contact"
+    
   };
 }
 toggle() {
@@ -33,6 +36,7 @@ sendNavFlagProfile = () => {
     });
   }
   this.props.navigationFlagIntermediateProfile(this.state.profileFlag);
+  this.props.navigationHookIntermediate(this.state.profileHook);
 }; 
 sendNavFlagContact = () => {
   if(!this.state.ContactFlag){
@@ -41,6 +45,7 @@ sendNavFlagContact = () => {
     });
   }
   this.props.navigationFlagIntermediateContact(this.state.ContactFlag);
+  this.props.navigationHookIntermediate(this.state.contactHook);
 }; 
 
 render() {

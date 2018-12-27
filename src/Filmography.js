@@ -54,7 +54,7 @@ class Filmography extends Component {
     let SRObanner = <img className={localCSSclasses.standingRoomOnly} src={this.state.images.StangingRoomCover} alt ='Standing Room Only'></img>
     let TFbanner = <img className={localCSSclasses.aTwistedFate} src={this.state.images.TwistedFateCover} alt="A Twisted Fate"></img>
     let DRbanner = <img className={localCSSclasses.DeathRomantisizedCSS} src={this.state.images.DeathRomantisizedCover} alt='Death Romantisized'></img>
-    let Pbanner = <img className={localCSSclasses.PoignantCSS} src={this.state.images.PoignantCover} al='Poignant'></img>
+    let Pbanner = <img className={localCSSclasses.PoignantCSS} src={this.state.images.PoignantCover} alt='Poignant'></img>
     let Wickbanner= <img className={localCSSclasses.WickCSS} src={this.state.images.WickCover} alt= "Wick"></img>
     return (
       <div className={localCSSclasses.inkstainBackground}>
