@@ -58,7 +58,7 @@ class Landing extends Component {
       });
    }, 3500);
   };
-  
+
   //handles carousel arrow onClick...
    handleNext(){
      let index = this.state.current,
