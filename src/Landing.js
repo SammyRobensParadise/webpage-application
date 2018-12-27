@@ -58,7 +58,7 @@ class Landing extends Component {
       });
    }, 3500);
   };
-
+  
   //handles carousel arrow onClick...
    handleNext(){
      let index = this.state.current,
@@ -73,10 +73,13 @@ class Landing extends Component {
         isNext: true
       });
      }
-
-     //handles carousel onswipe function, to the right...
-
-
+  
+     completeTransition = () => {
+         setTimeout( () => {
+           this.handleNext();
+           console.log("transitioning...");
+         }, 5000)
+     } 
 
   //click function
   sendFlag = () => {
