@@ -29,24 +29,36 @@ toggle() {
   });
 }
 
-sendNavFlagProfile = () => {
-  if(!this.state.profileFlag){
-    this.setState({
-      profileFlag: true
-    });
+  _sendNavFlagProfile = () => {
+    if (!this.state.profileFlag) {
+      this.setState({
+        profileFlag: true
+      });
+    }
+    this.props.navigationFlagIntermediateProfile(this.state.profileFlag);
+    this.props.navigationHookIntermediate(this.state.profileHook);
+  }; 
+  get sendNavFlagProfile() {
+    return this._sendNavFlagProfile;
   }
-  this.props.navigationFlagIntermediateProfile(this.state.profileFlag);
-  this.props.navigationHookIntermediate(this.state.profileHook);
-}; 
-sendNavFlagContact = () => {
-  if(!this.state.ContactFlag){
-    this.setState({
-      ContactFlag: true
-    });
+  set sendNavFlagProfile(value) {
+    this._sendNavFlagProfile = value;
   }
-  this.props.navigationFlagIntermediateContact(this.state.ContactFlag);
-  this.props.navigationHookIntermediate(this.state.contactHook);
-}; 
+  _sendNavFlagContact = () => {
+    if (!this.state.ContactFlag) {
+      this.setState({
+        ContactFlag: true
+      });
+    }
+    this.props.navigationFlagIntermediateContact(this.state.ContactFlag);
+    this.props.navigationHookIntermediate(this.state.contactHook);
+  }; 
+  get sendNavFlagContact() {
+    return this._sendNavFlagContact;
+  }
+  set sendNavFlagContact(value) {
+    this._sendNavFlagContact = value;
+  }
 
 render() {
     return (

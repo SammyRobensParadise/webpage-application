@@ -32,12 +32,15 @@ class Landing extends Component {
       'loading Image...'
     ],
     current: 0,
-    isNext: true,
+    isNext: false,
     displayFilm: true,
     showImage: false,
     navigationFlagIntermediateProfile: false,
     navigationFlagIntermediateContact: false,
-    navigationHookIntermediateString: "null"
+    navigationHookIntermediateString: "null",
+    timer: 0,
+    handleNexClicked: false,
+    exploreClicked: false
     };
 
     this.handleNext =this.handleNext.bind(this);
@@ -56,8 +59,28 @@ class Landing extends Component {
           showImage: true,
           exploreHook: "explore"
       });
-   }, 3500);
+   }, 3000);
   };
+
+  //get date to use to compare current time 
+  _getDate = () => {
+    var currentDate = new Date();
+    let localTimer = currentDate.getSeconds();
+    if (localTimer > 50) {
+      localTimer = currentDate.getSeconds() - 50;
+    }
+    this.setState({
+      timer: localTimer
+    });
+    console.log("getDateCalled " + this.state.timer);
+  };
+  get getDate() {
+    return this._getDate;
+  }
+  set getDate(value) {
+    this._getDate = value;
+  }
+
 
   //handles carousel arrow onClick...
    handleNext(){
@@ -74,59 +97,91 @@ class Landing extends Component {
       });
      }
   
-     completeTransition = () => {
-         setTimeout( () => {
-           this.handleNext();
-           console.log("transitioning...");
-         }, 5000)
-     } 
+     _completeTransition = () => {
+    setTimeout(() => {
+      this.handleNext();
+      console.log("transitioning...");
+    }, 5000);
+  }; 
+  get completeTransition() {
+    return this._completeTransition;
+  }
+  set completeTransition(value) {
+    this._completeTransition = value;
+  }
 
   //click function
-  sendFlag = () => {
-    if(!this.state.displayFilm){
-    this.setState({
-      displayFilm: true
-    });
-  }
-  this.props.renderStatus(this.state.displayFilm); 
-  this.props.getRenderHook(this.state.exploreHook);
+  _sendFlag = () => {
+    if (!this.state.displayFilm) {
+      this.setState({
+        displayFilm: true,
+        exploreClicked: true
+      });
+    }
+    this.props.renderStatus(this.state.displayFilm);
+    this.props.getRenderHook(this.state.exploreHook);
   }; 
+  get sendFlag() {
+    return this._sendFlag;
+  }
+  set sendFlag(value) {
+    this._sendFlag = value;
+  }
 
-  receiveFlagFromNavProfile = (renderFlag) => {
-    setTimeout( () => {
-      if(this.state.navigationFlagIntermediateProfile === false || this.state.navigationFlagIntermediateProfile !== true){
+  _receiveFlagFromNavProfile = (renderFlag) => {
+    setTimeout(() => {
+      if (this.state.navigationFlagIntermediateProfile === false || this.state.navigationFlagIntermediateProfile !== true) {
         this.setState({
           navigationFlagIntermediateProfile: renderFlag
-        })
+        });
       }
-      console.log("is this receivned in profile? " +this.state.navigationFlagIntermediateProfile);
+      console.log("is this receivned in profile? " + this.state.navigationFlagIntermediateProfile);
       this.props.getrenderProfile(this.state.navigationFlagIntermediateProfile);
     }, 500);
-   }
-   receiveFlagFromNavContact = (renderFlag) => {
-    setTimeout( () => {
-      if(this.state.navigationFlagIntermediateContact === false || this.state.navigationFlagIntermediateContact !== true){
+  };
+  get receiveFlagFromNavProfile() {
+    return this._receiveFlagFromNavProfile;
+  }
+  set receiveFlagFromNavProfile(value) {
+    this._receiveFlagFromNavProfile = value;
+  }
+
+   _receiveFlagFromNavContact = (renderFlag) => {
+    setTimeout(() => {
+      if (this.state.navigationFlagIntermediateContact === false || this.state.navigationFlagIntermediateContact !== true) {
         this.setState({
           navigationFlagIntermediateContact: renderFlag
-        })
+        });
       }
-      console.log("is this received in contact? " +this.state.navigationFlagIntermediateContact);
+      console.log("is this received in contact? " + this.state.navigationFlagIntermediateContact);
       this.props.getrenderContact(this.state.navigationFlagIntermediateContact);
     }, 500);
+  };
+  get receiveFlagFromNavContact() {
+    return this._receiveFlagFromNavContact;
+  }
+  set receiveFlagFromNavContact(value) {
+    this._receiveFlagFromNavContact = value;
+  }
 
-   }
-   receiveHookfromNavigation = (renderFlag) => {
-    setTimeout( () => {
+   _receiveHookfromNavigation = (renderFlag) => {
+    setTimeout(() => {
       let boolCheck = this.state.navigationHookIntermediateString;
-      if( boolCheck === 'null' || boolCheck !== 'profile' || boolCheck !== 'contact' || boolCheck !== 'explore'){
+      if (boolCheck === 'null' || boolCheck !== 'profile' || boolCheck !== 'contact' || boolCheck !== 'explore') {
         this.setState({
           navigationHookIntermediateString: renderFlag
-        })
+        });
       }
-      console.log("what is recevied in hook from naviagtion? " +this.state.navigationHookIntermediateString);
+      console.log("what is recevied in hook from naviagtion? " + this.state.navigationHookIntermediateString);
       this.props.getRenderHook(this.state.navigationHookIntermediateString);
     }, 500);
-   }
+  };
+  get receiveHookfromNavigation() {
+    return this._receiveHookfromNavigation;
+  }
+  set receiveHookfromNavigation(value) {
+    this._receiveHookfromNavigation = value;
+  }
   //render function
   render() {
     //create local variable that inherits the current state of class variables...

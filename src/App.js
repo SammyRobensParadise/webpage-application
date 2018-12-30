@@ -49,55 +49,77 @@ class App extends Component {
     
     this.scrollToTopWithCallback = this.scrollToTopWithCallback.bind(this);
     };
-    displayFilmography = (renderflag) => {
-      setTimeout( () => {
-      if(this.state.renderFilmography === false || this.state.renderFilmography !== true || this.state.renderFilmography === true){
-        this.setState({
-        renderFilmography: renderflag
-      });
-    }
-    console.log("status of displayfilmography "+this.state.renderFilmography)
-  }, 1000);
-  };
 
-  displayProfile = (renderFlag) => {
-    setTimeout( () => {
-      if(this.state.renderProfile === false || this.state.renderProfile !==true || this.state.renderProfile === true){
+    _displayFilmography = (renderflag) => {
+    setTimeout(() => {
+      if (this.state.renderFilmography === false || this.state.renderFilmography !== true || this.state.renderFilmography === true) {
+        this.setState({
+          renderFilmography: renderflag
+        });
+      }
+      console.log("status of displayfilmography " + this.state.renderFilmography);
+    }, 1000);
+  };
+  get displayFilmography() {
+    return this._displayFilmography;
+  }
+  set displayFilmography(value) {
+    this._displayFilmography = value;
+  }
+
+  _displayProfile = (renderFlag) => {
+    setTimeout(() => {
+      if (this.state.renderProfile === false || this.state.renderProfile !== true || this.state.renderProfile === true) {
         this.setState({
           renderProfile: renderFlag
         });
       }
-      console.log("status of render profile"+ this.state.renderProfile);
-    }, 500)
+      console.log("status of render profile" + this.state.renderProfile);
+    }, 500);
+  };
+  get displayProfile() {
+    return this._displayProfile;
+  }
+  set displayProfile(value) {
+    this._displayProfile = value;
   }
 
-  displayContact = (renderFlag) => {
-    setTimeout( () => {
-      if(this.state.renderContact === false || this.state.renderContact !== true || this.state.renderContact === true){
+  _displayContact = (renderFlag) => {
+    setTimeout(() => {
+      if (this.state.renderContact === false || this.state.renderContact !== true || this.state.renderContact === true) {
         this.setState({
           renderContact: renderFlag
         });
       }
       console.log("status of render contact" + this.state.renderContact);
-    }, 500)
+    }, 500);
+  };
+  get displayContact() {
+    return this._displayContact;
+  }
+  set displayContact(value) {
+    this._displayContact = value;
   }
 
-  displayHook = (renderFlag) => {
-    setTimeout( () => {
+  _displayHook = (renderFlag) => {
+    setTimeout(() => {
       this.setState({
         renderHook: renderFlag
       });
       console.log("status of render hook as a string: " + this.state.renderHook);
-    }, 500)
+    }, 500);
+  };
+  get displayHook() {
+    return this._displayHook;
+  }
+  set displayHook(value) {
+    this._displayHook = value;
   }
 
   componentDidMount(){
     scrollToComponent(this.refs.Violet, {offset: 0, align: 'middle', duration: 500});
-
   };
   componentWillUnmount(){
-
-    console.log("unmounting component...");
   };
 
   scrollToTopWithCallback() {
