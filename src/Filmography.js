@@ -1,3 +1,13 @@
+/*___________________________________________
+SOURCE CODE ASSET OF SAMUEL ROBENS-PARADISE © 2018-2019
+DISTRIBUTION OF CODE WITHOUT WRITTEN CONSENT OF
+SAMUEL ROBENS-PARADISE IS PROHIBITED UNLESS
+ACCESSED THROUGH PUBLIC DOIMAIN SUCH AS GITHUB
+OR ANY OTHER OPEN SOURCE PLATFORM ON WHICH ASSET
+WAS PUBLISHED WITH AUTHOR CONSENT
+________________________________________________
+*/
+
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import './App.css';
@@ -8,6 +18,9 @@ import ATwistedFate from './img/TF_poster.jpg';
 import DeathRomantisized from './img/DR_poster.jpg';
 import Poignant from './img/P_poster.jpg';
 import Wick from './img/Wick_poster.jpg';
+
+// This class corresponds to the filmography section of the website. Data that is associated with this component
+// is stored locally to this class.
 
 class Filmography extends Component {
   constructor(props){
@@ -30,6 +43,20 @@ class Filmography extends Component {
         WickDescription: "Wick is a computer game made by Hellbent Games. Emily voices one of the kids who warns against entering the forest at night."
       }
     }
+  }
+
+  componentDidMount(){
+    setTimeout( () => {
+      this.setState({
+        images: {
+          StangingRoomCover: StandingRoomOnly,
+          TwistedFateCover: ATwistedFate,
+          DeathRomantisizedCover: DeathRomantisized,
+          PoignantCover: Poignant,
+          WickCover: Wick
+        }
+      })
+    },300)
   }
   render() {
     //generating local css classes object...

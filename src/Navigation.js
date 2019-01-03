@@ -1,3 +1,13 @@
+/*___________________________________________
+SOURCE CODE ASSET OF SAMUEL ROBENS-PARADISE © 2018-2019
+DISTRIBUTION OF CODE WITHOUT WRITTEN CONSENT OF
+SAMUEL ROBENS-PARADISE IS PROHIBITED UNLESS
+ACCESSED THROUGH PUBLIC DOIMAIN SUCH AS GITHUB
+OR ANY OTHER OPEN SOURCE PLATFORM ON WHICH ASSET
+WAS PUBLISHED WITH AUTHOR CONSENT
+________________________________________________
+*/
+
 import React, { Component } from 'react';
 import './App.css';
 import {
@@ -44,6 +54,7 @@ toggle() {
   set sendNavFlagProfile(value) {
     this._sendNavFlagProfile = value;
   }
+
   _sendNavFlagContact = () => {
     if (!this.state.ContactFlag) {
       this.setState({
@@ -68,10 +79,10 @@ render() {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink><span onClick={this.sendNavFlagProfile} className="Navigationcss">Profile</span></NavLink>
+                <NavLink><span id="profile-navigation" onClick={this.sendNavFlagProfile} className="Navigationcss">Profile</span></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink ><span onClick={this.sendNavFlagContact} className="Navigationcss" >Contact</span></NavLink>
+                <NavLink ><span id="contact-navigation" onClick={this.sendNavFlagContact} className="Navigationcss" >Contact</span></NavLink>
               </NavItem>
             </Nav>
           </Collapse>

@@ -1,5 +1,5 @@
 /*___________________________________________
-CODE ASSET OF SAMUEL ROBENS-PARADISE © 2018
+CODE ASSET OF SAMUEL ROBENS-PARADISE © 2018-2019
 DISTRIBUTION OF CODE WITHOUT WRITTEN CONSENT OF
 SAMUEL ROBENS-PARADISE IS PROHIBITED UNLESS
 ACCESSED THROUGH PUBLIC DOIMAIN SUCH AS GITHUB
@@ -169,12 +169,12 @@ class App extends Component {
     
     return (
       <div className="App" >
-      <Landing ref="landing" EmilyInfo={this.state} renderStatus={this.displayFilmography} getrenderProfile={this.displayProfile} getrenderContact={this.displayContact} getRenderHook={this.displayHook} />
-      <Filmography ref="film" renderStatus={this.state.renderFilmography} />
-      <Profile ref="profile" EmilyInfo={this.state} renderStatus={this.state.renderProfile} />
-      <Contact ref="contact" renderStatus={this.state.renderContact} />
-      <Footer ref={this.footerRef} renderStatus={this.state.renderFooter}/>
-   </div>
+        <Landing ref="landing" EmilyInfo={this.state} renderStatus={this.displayFilmography} getrenderProfile={this.displayProfile} getrenderContact={this.displayContact} getRenderHook={this.displayHook} />
+        <Filmography ref="film" renderStatus={this.state.renderFilmography} />
+        <Profile ref="profile" EmilyInfo={this.state} renderStatus={this.state.renderProfile} />
+        <Contact ref="contact" renderStatus={this.state.renderContact} />
+        <Footer ref={this.footerRef} renderStatus={this.state.renderFooter}/>
+      </div>
     );
   }
   
