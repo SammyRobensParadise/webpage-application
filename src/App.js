@@ -58,7 +58,7 @@ class App extends Component {
         });
       }
       console.log("status of displayfilmography " + this.state.renderFilmography);
-    }, 1000);
+    }, 500);
   };
   get displayFilmography() {
     return this._displayFilmography;
