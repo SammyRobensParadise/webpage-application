@@ -47,7 +47,6 @@ class Contact extends Component {
       ContactEmailLogo: 'contactbyemaillogo'
     }
     //generating props from parent class...
-    let {EmilyInfo} = this.props;
     //generating local html elements...
     let sectionName = <h1 className={localCSSclasses.sectionHeader}><span>{this.state.sectionTitle}</span></h1>
     let sectionMinheader = <h2 className={localCSSclasses.sectionSubHeader}><span>{this.state.sectionDefinition}</span></h2>
